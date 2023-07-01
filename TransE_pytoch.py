@@ -13,7 +13,7 @@ import torch.optim as optim
 from torch.autograd import Variable
 import operator  # operator模块输出一系列对应Python内部操作符的函数
 
-# 全局变量
+# 全局变量（实体、关系字典（编码：序号index））
 entities2id = {}
 relations2id = {}
 relation_tph = {}
@@ -23,7 +23,7 @@ relation_hpt = {}
 def dataloader(file1, file2, file3, file4):
     print("load file...")
 
-    entity = []
+    entity = []   #实体和关系序号组成的列表
     relation = []
     with open(file2, 'r') as f1, open(file3, 'r') as f2:
         lines1 = f1.readlines()
