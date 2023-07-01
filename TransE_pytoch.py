@@ -84,7 +84,7 @@ def dataloader(file1, file2, file3, file4):
             sum1 += 1
             sum2 += relation_head[r_][head]
         tph = sum2 / sum1
-        relation_tph[r_] = tph
+        relation_tph[r_] = tph   #tail per head
     # 计算每个关系平均尾实体数
     for r_ in relation_tail:
         sum1, sum2 = 0, 0
@@ -92,7 +92,7 @@ def dataloader(file1, file2, file3, file4):
             sum1 += 1
             sum2 += relation_tail[r_][tail]
         hpt = sum2 / sum1
-        relation_hpt[r_] = hpt
+        relation_hpt[r_] = hpt   #head per tail
     # 获得验证集的三元组集合
     valid_triple_list = []
     with codecs.open(file4, 'r') as f:
@@ -113,7 +113,7 @@ def dataloader(file1, file2, file3, file4):
 
     return entity, relation, triple_list, valid_triple_list
 
-
+#范数
 def norm_l1(h, r, t):
     return np.sum(np.fabs(h + r - t))
 
