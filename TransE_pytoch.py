@@ -42,7 +42,7 @@ def dataloader(file1, file2, file3, file4):
             relations2id[line[0]] = line[1]
             relation.append(int(line[1]))
 
-    triple_list = []
+    triple_list = []   #三元组列表
     relation_head = {} # 关系与头实体的字典集合计数
     relation_tail = {} # 关系与尾实体的字典集合计数
 
